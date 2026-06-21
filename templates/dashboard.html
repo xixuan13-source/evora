@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <nav>
+    <a href="/">Home</a> |
+    <a href="/dashboard">Dashboard</a> |
+    <a href="/expenses">Expenses</a> |
+    <a href="/budgets">Budgets</a> |
+    <a href="/feedback">Feedback</a>
+    </nav>
+
+    <hr>
+
+    <h1>EVORA Dashboard</h1>
+
+    <h3>Welcome, {{ username }}</h3>
+
+    <div class="dashboard-cards">
+
+    <div class="dashboard-card">
+        <h3>Total Expenses</h3>
+        <p class="metric">${{ total_expenses }}</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Transactions</h3>
+        <p class="metric">{{ total_transactions }}</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Categories Used</h3>
+        <p class="metric">{{ categories_used }}</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Top Category</h3>
+        <p class="metric">{{ top_category[0] }}</p>
+        <p>${{ top_category[1] }}</p>
+    </div>
+
+</div>
+<h2>Recent Expenses</h2>
+<table>
+
+<tr>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Amount</th>
+</tr>
+
+{% for expense in recent_expenses %}
+
+<tr>
+    <td>{{ expense[0] }}</td>
+    <td>{{ expense[1] }}</td>
+    <td>${{ expense[2] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

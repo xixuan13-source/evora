@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <a href="/">Home</a> |
+    <a href="/dashboard">Dashboard</a> |
+    <a href="/expenses">Expenses</a> |
+    <a href="/budgets">Budgets</a> |
+    <a href="/feedback">Feedback</a>
+</nav>
+
+<hr>
+
+<h1>Feedback</h1>
+
+<form method="POST">
+
+    <p>Feedback Type</p>
+
+    <select name="feedback_type">
+
+        <option value="Suggestion">
+            Suggestion
+        </option>
+
+        <option value="Bug Report">
+            Bug Report
+        </option>
+
+        <option value="Feature Request">
+            Feature Request
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+    <p>Comment</p>
+
+    <textarea
+        name="comment"
+        rows="5"
+        cols="40"
+        placeholder="Tell us your feedback..."
+        required></textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Submit Feedback
+    </button>
+
+</form>
+
+</body>
+</html>

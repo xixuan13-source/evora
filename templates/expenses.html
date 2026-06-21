@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expenses</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <nav>
+    <a href="/">Home</a> |
+    <a href="/dashboard">Dashboard</a> |
+    <a href="/expenses">Expenses</a> |
+    <a href="/budgets">Budgets</a> |
+    <a href="/feedback">Feedback</a>
+    </nav>
+
+    <hr>
+
+<h1>Expenses</h1>
+<p>
+    <a href="/add-expense">
+        + Add Expense
+    </a>
+</p>
+
+<table border="1">
+
+    <tr>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+
+    {% for expense in expenses %}
+
+    <tr>
+        <td>{{ expense[0] }}</td>
+        <td>{{ expense[1] }}</td>
+        <td>${{ expense[2] }}</td>
+        <td>{{ expense[3] }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

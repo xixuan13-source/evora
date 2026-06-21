@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budgets</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <a href="/">Home</a> |
+    <a href="/dashboard">Dashboard</a> |
+    <a href="/expenses">Expenses</a> |
+    <a href="/budgets">Budgets</a> |
+    <a href="/feedback">Feedback</a>
+</nav>
+
+<hr>
+
+<h1>Budgets</h1>
+
+<table>
+
+<tr>
+    <th>Category</th>
+    <th>Budget Amount</th>
+</tr>
+
+{% for budget in budgets %}
+
+<tr>
+    <td>{{ budget[0] }}</td>
+    <td>${{ budget[1] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evora</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <nav>
+    <a href="/">Home</a> |
+    <a href="/dashboard">Dashboard</a> |
+    <a href="/expenses">Expenses</a> |
+    <a href="/budgets">Budgets</a> |
+    <a href="/feedback">Feedback</a>
+    </nav>
+
+    <hr>
+
+    <h1>EVORA</h1>
+
+    <p>Smarter financial decisions.</p>
+
+    <h3>Welcome, {{ username }}</h3>
+
+</body>
+</html>
